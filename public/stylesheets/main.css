@@ -2,6 +2,11 @@ header {
   overflow: hidden;
 }
 
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: 300;
+}
+
 .navbar .navbar-brand {
   color: #4592af;
 }
@@ -45,6 +50,10 @@ header {
   color: white;
 }
 
+.btn-custom {
+  background-color: #fce2cf;
+  color: #292827;
+}
 .form-control:focus {
   box-shadow: none;
   border-color: #ced4da;
@@ -63,10 +72,18 @@ header {
   text-overflow:ellipsis;
   white-space:nowrap;
 }
+.new-table {
+  background-color: #fce2cf;
+  color: #292827;
+}
 
 .restaurant-category {
   color: #666666;
   font-size: 0.8rem;
+}
+
+.notice {
+  font-size: 5px;
 }
 
 .restaurant-show-title {
