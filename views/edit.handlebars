@@ -1,0 +1,62 @@
+<div class="container card mt-2 new-table">
+  <h5 class="text-center m-2">修改 "{{restaurant.name}}" 內容</h5>
+  <div class="card-body row">
+    <form action="/restaurants/{{restaurant._id}}/edit" method="POST" class="font-weight-lighter col-12">
+      <!--餐廳名稱-->
+      <div class="form-group ">
+        <label for="restaurantName">餐廳名稱<span class="notice" style="color:brown"> *必填</span></label>
+        <input type="text" name="name" class="form-control" id="restaurantName" placeholder="麥當勞"
+          value="{{restaurant.name}}" required>
+      </div>
+      <!--餐廳英文-->
+      <div class="form-group">
+        <label for="restaurantNameEn">餐廳英文名稱</label>
+        <input type="text" name="name_en" class="form-control" id="restaurantNameEn" placeholder="McDonald's"
+          value="{{restaurant.name_en}}">
+      </div>
+      <!--餐廳類型-->
+      <div class="form-group">
+        <label for="category">餐廳類型<span class="notice" style="color:brown"> *必填</span></label>
+        <input type="text" name="category" class="form-control" id="category" placeholder="速食店"
+          value="{{restaurant.category}}" required>
+      </div>
+      <!--照片連結-->
+      <div class="form-group">
+        <label for="image">照片連結</label>
+        <input type="text" name="image" class="form-control" id="image" placeholder="https://reurl.cc/gmzOdQ"
+          value="{{restaurant.image}}">
+      </div>
+      <!--地址-->
+      <div class="form-group">
+        <label for="location">地址</label>
+        <input type="text" name="location" class="form-control" id="location" placeholder="407台中市西屯區文心路..."
+          value="{{restaurant.location}}">
+      </div>
+      <!--電話-->
+      <div class="form-group">
+        <label for="phone">電話</label>
+        <input type="text" name="phone" class="form-control" id="phone" placeholder="0800-211-321"
+          value="{{restaurant.phone}}">
+      </div>
+      <!--google map 連結-->
+      <div class="form-group">
+        <label for="google_map">google map 連結</label>
+        <input type="text" name="google_map" class="form-control" id="google_map"
+          placeholder="https://goo.gl/maps/djHr6qXj2SqTFQtJ7" value="{{restaurant.google_map}}">
+      </div>
+      <!--評價-->
+      <div class="form-group">
+        <label for="rating">評價<span class="notice" style="color:brown"> *必填</span></label>
+        <input type="number" name="rating" class="form-control" id="rating" min="0" max="5" step="0.1"
+          placeholder="{{restaurant.rating}}" required>
+      </div>
+      <!--餐廳敘述-->
+      <div class="form-group">
+        <label for="description">餐廳敘述</label>
+        <textarea type="text" name="description" class="form-control" id="description"
+          placeholder="{{restaurant.description}}" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-major">Save</button>
+    </form>
+  </div>
+</div>

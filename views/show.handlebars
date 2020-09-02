@@ -3,10 +3,14 @@
   <div class="row">
     <div class="col-12 col-md-10 mx-auto">
       <div class="row pl-2 mb-2">
-        <a class="btn btn-custom mr-2" href="">Edit</a>
-        <a class="btn btn-custom mr-2" href="">back</a>
+        <a class="btn btn-custom mr-2" href="/restaurants/{{restaurant._id}}/edit">Edit</a>
+        <a class="btn btn-custom mr-2" href="/">back</a>
         <a class="btn btn-outline-danger mr-2" href="/">delete</a>
       </div>
+      <span class="badge badge-pill badge-danger font-weight-normal">
+        {{restaurant.rating}}
+        <i class="fas fa-star fa-xs"></i>
+      </span>
       <p class="mb-1">
         <span class="text-secondary">
           <i class="fas fa-utensils pr-2"></i>
