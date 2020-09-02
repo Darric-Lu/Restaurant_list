@@ -71,6 +71,14 @@ app.post('/restaurants/:id/edit', (req, res) => {
     .catch(error => console.error(error))
 })
 
+app.get('/restaurants/:id/delete', (req, res) => {
+  const id = req.params.id
+  restaurantData.findById(id)
+    .then(restaurant => restaurant.remove())
+    .then(() => res.redirect(`/`))
+    .catch(error => console.error(error))
+})
+
 app.get('/search', (req, res) => {
   const keyword = req.query.keyword
   const filterRestaurant = restaurants.results.filter(item => {
