@@ -39,15 +39,18 @@ app.get('/restaurants/new', (req, res) => {
 })
 
 app.post('/restaurants', (req, res) => {
-  return restaurantData.create({ ...req.body })
+  restaurantData.create({ ...req.body })
     .then(() => res.redirect('/'))
     .catch(error => console.error(error))
 })
 
 app.get('/restaurants/:id', (req, res) => {
   // console.log('req.params.id?', req.params.id)
-  const restaurant = restaurants.results.find(e => e.id.toString() === req.params.id)
-  res.render('show', { restaurant: restaurant })
+  const id = req.params.id
+  restaurantData.findById(id)
+    .lean()
+    .then(restaurant => res.render('show', { restaurant }))
+    .catch(error => console.error(error))
 })
 
 app.get('/search', (req, res) => {
