@@ -30,6 +30,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.get('/', (req, res) => {
   restaurantData.find()
     .lean()
+    .sort({ _id: 'asc' })
     .then(restaurant => res.render('index', { restaurant }))
     .catch(error => console.error(error))
 })
