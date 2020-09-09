@@ -46,7 +46,9 @@
               <div class="row justify-content-center mt-2">
                 <a class="btn btn-custom btn-sm mr-2" href="/restaurants/{{this._id}}/edit">Edit</a>
                 <a class="btn btn-custom btn-sm mr-2" href="/restaurants/{{this._id}}">Detail</a>
-                <a class="btn btn-outline-danger btn-sm mt-lg-0" href="/restaurants/{{this._id}}/delete">delete</a>
+                <form action="/restaurants/{{this._id}}?_method=DELETE" method="POST">
+                  <button class="btn btn-outline-danger btn-sm mt-lg-0" type="submit">delete</button>
+                </form>
               </div>
             </div>
           </div>

@@ -5,7 +5,9 @@
       <div class="row pl-2 mb-2">
         <a class="btn btn-custom mr-2" href="/restaurants/{{restaurant._id}}/edit">Edit</a>
         <a class="btn btn-custom mr-2" href="/">back</a>
-        <a class="btn btn-outline-danger mr-2" href="/restaurants/{{restaurant._id}}/delete">delete</a>
+        <form action="/restaurants/{{restaurant._id}}?_method=DELETE" method="POST">
+          <button class="btn btn-outline-danger mr-2" type="submit">delete</button>
+        </form>
       </div>
       <span class="badge badge-pill badge-danger font-weight-normal">
         {{restaurant.rating}}

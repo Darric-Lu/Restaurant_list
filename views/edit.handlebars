@@ -1,7 +1,7 @@
 <div class="container card mt-2 new-table">
   <h5 class="text-center m-2">修改 "{{restaurant.name}}" 內容</h5>
   <div class="card-body row">
-    <form action="/restaurants/{{restaurant._id}}/edit" method="POST" class="font-weight-lighter col-12">
+    <form action="/restaurants/{{restaurant._id}}/?_method=PUT" method="POST" class="font-weight-lighter col-12">
       <!--餐廳名稱-->
       <div class="form-group ">
         <label for="restaurantName">餐廳名稱<span class="notice" style="color:brown"> *必填</span></label>
