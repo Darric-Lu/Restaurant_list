@@ -5,20 +5,9 @@ const bodyParser = require("body-parser")
 const methodOverride = require('method-override')
 const port = 3000
 const app = express()
-const db = mongoose.connection
+
 const routes = require('./routes')
-
-mongoose.connect('mongodb://localhost/restaurant-list', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-
-db.on('error', () => {
-  console.log('mongoose error!')
-})
-db.once('open', () => {
-  console.log('mongoose connected!')
-})
+require('./config/mongoose')
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
