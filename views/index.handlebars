@@ -39,7 +39,7 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-md-10 col-12 mx-auto">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 ">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 wrapping">
         {{#each restaurant}}
         <div class="p-1">
           <div class="card">
@@ -66,9 +66,8 @@
               <div class="row justify-content-center mt-2 collapse" id="D{{this._id}}">
                 <a class="btn btn-custom btn-sm mr-2" href="/restaurants/{{this._id}}/edit">Edit</a>
                 <a class="btn btn-custom btn-sm mr-2" href="/restaurants/{{this._id}}">Detail</a>
-                <form action="/restaurants/{{this._id}}?_method=DELETE" method="POST">
-                  <button class="btn btn-outline-danger btn-sm mt-lg-0" type="submit">delete</button>
-                </form>
+                <button class="btn btn-outline-danger btn-sm mt-lg-0 card-delete-btn" data-toggle="modal" type="button"
+                  data-target="#exampleModal" data-id="{{this._id}}" data-name="{{this.name}}">delete</button>
               </div>
             </div>
           </div>
@@ -78,3 +77,40 @@
     </div>
   </div>
 </div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="row justify-content-round">
+          <div class="col-8">
+            <h5 class="modal-title" id="exampleModalLabel">確認刪除:</h5>
+          </div>
+          <div class="col-4">
+            <div class="row justify-content-end" id="buttons">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  const wrapping = document.querySelector('.wrapping')
+
+  function cardDeletePrompt(e) {
+    if (e.target.matches('.card-delete-btn')) {
+      const buttons = document.querySelector('#buttons')
+      buttons.innerHTML = `
+    <form action="/restaurants/${e.target.dataset.id}?_method=DELETE" method="POST">
+    <button class="btn btn-outline-danger btn-sm mr-2" type="submit">delete</button>
+    </form>
+    <button type="button" class="btn btn-secondary btn-sm mr-2" data-dismiss="modal">Close</button>
+    `
+      document.querySelector('#exampleModalLabel').innerHTML = `
+    確認刪除: ${e.target.dataset.name}
+    `
+    }
+  }
+  wrapping.addEventListener('click', cardDeletePrompt)
+</script>
