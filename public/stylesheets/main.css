@@ -8,11 +8,15 @@ body {
 }
 
 .navbar .navbar-brand {
-  color: #4592af;
+  color: #BE7656;
 }
 
 .navbar .navbar-brand:hover {
-  color: #226089;
+  color: #4B1F0E;
+}
+
+.logo {
+  filter:hue-rotate(180deg)
 }
 
 .banner {
@@ -28,35 +32,44 @@ body {
 .search-bar .search-bar-outer {
   margin: 0 auto;
   max-width: 680px;
-  background-color: #fce2cf;
+  background-color: #efc3a4;
   border-radius: 8px;
   padding: 20px 30px;
-  border: 0;
+  border: 2px #BE7656 solid;
   margin-top: -60px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 .search-bar .search-bar-inner h4 {
-  color: #9b4b4b;
+  color: #4B1F0E;
 }
 
 .form-control::placeholder {
   color: #aaaaaa;
-  font-size: 0.8rem;
+  font-size: 0.4rem;
 }
 
 .btn-major {
-  background-color: #9b4b4b;
-  color: white;
+  background-color: #BE7656;
+  color: #794028;
 }
 
 .btn-custom {
-  background-color: #fce2cf;
-  color: #292827;
+  background-color: #BE7656;
+  color: #794028;
 }
 .form-control:focus {
   box-shadow: none;
   border-color: #ced4da;
+}
+.bg-custom {
+  background-color: #e7e7e7;
+  color: #afafaf;
+}
+
+.bg-custom:hover {
+  background-color: #b4b4b4;
+  color: #f3f3f3;
 }
 
 .card {

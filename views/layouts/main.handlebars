@@ -17,11 +17,14 @@
     <nav class="navbar navbar-light bg-light">
       <div class="container">
         <a class="navbar-brand" href="/">
-          <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/6227/restaurant-list-logo.png"
-            width="30" height="30" class="d-inline-block align-top" alt="我的餐廳清單">
+          <img class="logo"
+            src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/6227/restaurant-list-logo.png" width="30"
+            height="30" class="d-inline-block align-top" alt="我的餐廳清單">
           我的餐廳清單
         </a>
-        <a class="btn btn-major btn-sm mt-2" href="/restaurants/new">Create</a>
+        {{#if createBtn}}
+        <a class="btn btn-major btn-sm mt-2" href="/restaurants/new">+ 增加餐廳</a>
+        {{/if}}
       </div>
     </nav>
 

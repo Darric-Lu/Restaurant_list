@@ -6,7 +6,6 @@ const restaurantData = require('../../models/restaurant')
 
 router.get('/', (req, res) => {
   const keyword = req.query.keyword
-  console.log(keyword)
   restaurantData.find()
     .lean()
     .then(restaurants => {
