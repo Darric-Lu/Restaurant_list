@@ -1,4 +1,4 @@
-# Restaurant List v2.0
+# Restaurant List v3.0
 A simple web application to record restaurant of list
 
 ## Features
@@ -7,7 +7,14 @@ A simple web application to record restaurant of list
 - read the details of each restaurant
 - create the details of restaurant
 - edit the details of restaurant
-- delete the destails of restaurant
+- delete the details of restaurant
+- sort the restaurants by order
+- sort the restaurants by reverse order
+- sort the restaurants by category
+- sort the restaurants by location
+- prompt for delete restaurant
+- prompt for create restaurant
+- prompt for edit restaurant
 
 ### Details
 Click restaurant card to see details
@@ -30,6 +37,7 @@ Click restaurant card to see details
 4. [mongoose](https://mongoosejs.com/) 5.10.2
 5. [nodemon](https://nodemon.io/) 2.0.4
 6. [body-parser](https://www.npmjs.com/package/body-parser) 1.19.0
+7. [method-override](https://www.npmjs.com/package/method-override) 3.0.0
 
 ## Installation and Execution
 1. Clone this git to local
