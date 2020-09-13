@@ -57,8 +57,57 @@
           placeholder="{{restaurant.description}}" rows="3"></textarea>
       </div>
       <div class="d-flex justify-content-center">
-        <button type="submit" class="btn btn-major">Save</button>
+        <button class="btn btn-major new-create-btn" data-toggle="modal" type="button"
+          data-target="#exampleModal">Submit</button>
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title m-2">確認修改 :</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer justify-content-center">
+              <button type="submit" class="btn btn-major text-center">Submit</button>
+            </div>
+          </div>
+        </div>
       </div>
     </form>
   </div>
 </div>
+
+<script>
+  const newCreateBtn = document.querySelector('.new-create-btn')
+  newCreateBtn.addEventListener('click', createPrompt)
+  function createPrompt(e) {
+    const restaurantName = document.querySelector('#restaurantName').value
+    const restaurantNameEn = document.querySelector('#restaurantNameEn').value
+    const category = document.querySelector('#category').value
+    const image = document.querySelector('#image').value
+    const location = document.querySelector('#location').value
+    const phone = document.querySelector('#phone').value
+    const googleMap = document.querySelector('#google_map').value
+    const rating = document.querySelector('#rating').value
+    const description = document.querySelector('#description').value
+    document.querySelector('.modal-body').innerHTML = `
+     <img style="width: 100%; height: auto;" class="mb-2" src="${image}" alt="${restaurantName}">
+      <p>餐廳名稱<span class="notice" style="color:brown"> *必填</span> : <span class="font-weight-bold">${restaurantName}</span></p> 
+      <p>餐廳英文名稱 :<span class="font-weight-bold">${restaurantNameEn}</span></p>
+      <p>餐廳類型<span class="notice" style="color:brown"> *必填</span> : <span class="font-weight-bold">${category}</span></p>
+      <p>地址 : <span class="font-weight-bold">${location}</span></p>
+      <p>電話 : <span class="font-weight-bold">${phone}</span></p>
+      <p>評價 : <span class="notice" style="color:brown"> *必填</span>
+        <span class="badge badge-pill badge-danger font-weight-normal">${rating}
+          <i class="fas fa-star fa-xs"></i>
+        </span>
+      </p>
+      <p>敘述 : <span class="font-weight-bold">${description}</span></p></p>
+`
+  }
+</script>
